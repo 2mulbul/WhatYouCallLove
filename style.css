@@ -1,0 +1,75 @@
+@font-face {
+  font-family: '국립박물관문화재단클래식B';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.0/국립박물관문화재단클래식B.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+  font-family: '국립박물관문화재단클래식M';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.0/국립박물관문화재단클래식M.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: 국립박물관문화재단클래식B;
+}
+
+.text-container {
+  display: inline-flex;
+  align-items: flex-start;
+  flex-direction:column;
+  height: 100%;
+  padding-left: 5vw;
+  justify-content: center;
+}
+
+.question {
+
+  color: black;
+  font-size: 3.8vw;
+  padding: 2vw 0;
+    
+}
+
+.buttons {
+  text-decoration: none;
+  display: flex;
+  flex-direction:column;
+  outline: none;
+
+}
+
+#first {
+
+  background-color:black;
+  border: 1px solid black;
+  border-radius: 5vw;
+  color: white;
+  padding: 0.8vw 2.5vw;
+  margin: 0.5vw 0;
+  font-size: 2vw;
+  font-family: 국립박물관문화재단클래식M;
+
+}
+#second {
+
+  background-color:white;
+  border: 1px solid black;
+  border-radius: 5vw;
+  color: black;
+  padding: 0.8vw 2.5vw;
+  margin: 0.5vw 0;
+  font-size: 2vw;
+  font-family: 국립박물관문화재단클래식M;
+  
+    
+
+}
+canvas {
+  
+  /* display: block; */
+}

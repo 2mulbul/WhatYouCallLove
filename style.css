@@ -1,0 +1,158 @@
+@font-face {
+  font-family: '국립박물관문화재단클래식B';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.0/국립박물관문화재단클래식B.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+  font-family: '국립박물관문화재단클래식M';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.0/국립박물관문화재단클래식M.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+  font-family: '국립박물관문화재단클래식L';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.0/국립박물관문화재단클래식L.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+* {
+  box-sizing: inherit;
+  
+}
+html, body {
+  display: block;
+  font-size:62.5%;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden;
+  font-family: 국립박물관문화재단클래식L; 
+  background-color: black;
+  filter: invert();
+  /*다크모드는 아래만 비활성화하면 됨!*/
+  mix-blend-mode: difference;
+}
+.cursor {
+  /* mix-blend-mode: difference; */
+  /* backdrop-filter: blur(5px); */
+  /* filter:blur(5px); */
+  /* z-index: 2; */
+  width: 3rem;
+  height: 3rem;
+  background-color: white;
+  border-radius: 50%;
+  position:absolute;
+  transform: translate(-50%,-50%);
+  pointer-events: none;
+}
+.jellys {
+  /* z-index: 2; */
+  filter: url("#jellyCursor");
+  /* mix-blend-mode: difference; */
+}
+
+
+.section {
+  z-index: 2;
+  display: block;
+  padding: 5rem 7.7rem;
+  height: 100%;
+}
+
+.header-item {
+  font-size: 1.8rem;
+  display: flex;
+  position: relative;
+  top: 0;
+  left: 0;
+  width: auto;
+  color:#999999;
+}
+#projectName, #progressText, #close {
+  flex:none;
+}
+#projectName {
+  padding-right: 7.7rem;
+}
+#progressText {
+  padding-left: 3rem;
+}
+#close {
+  font-size: 2.4rem;
+  margin-left: auto;
+}
+
+.question {
+  z-index: -1;
+  color: black;
+  text-shadow: 0px 0px 0 #fff;
+  font-size: 12rem;
+  position: absolute;
+  top:48%;
+  left:50%;
+  transform:translate(-50%, -50%);
+  white-space: nowrap;
+}
+
+.choices-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: repeat(10, 1fr);
+  height: 100%;
+}
+#choice-wrap1 {
+	grid-column: 1 / 2;
+	grid-row: 8 / 9;
+  justify-self: start;
+}
+#choice-wrap2 {
+  grid-column: 2 / 3;
+	grid-row: 8 / 9;
+  justify-self: end;
+  
+}
+.circle {
+  margin:0 0 1.6rem 0;
+  height: 3.6rem;
+  width: 3.6rem;
+  background-color: white;
+  border: 1px solid white;
+  border-radius: 50%;
+}
+
+.button {
+  text-decoration:none;
+  font-size: 2.1rem;
+  line-height: 148%;
+  outline: none;
+  color:white;
+}
+
+
+#first {
+  text-align:left;
+}
+#second {
+  text-align:right;
+}
+.hidden {
+  display: none;
+}
+canvas {
+  /* mix-blend-mode: difference; */
+  position:absolute;
+  top:0;
+  left:0;
+  filter:url("#goo");
+  /* opacity:0.8; */
+  /* backdrop-filter:blur(5px); */
+  /* background-color: black; */
+  z-index: -1;
+}
+
+@media only screen and (max-width: 768px){
+  html, body {
+    font-size: 34%;
+  }
+}

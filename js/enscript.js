@@ -45,22 +45,7 @@ window.addEventListener('mousemove', function (event) {
     } else { };
 });
 
-function Restart() {
-    progress.classList.add('displayNone');
-    setTimeout(function () {
-        finalBt.classList.remove('displayNone'); 
-    },1000)
-}
-var restartTimer;
 
-window.addEventListener('mousemove', function (event) {
-    mouse.x = event.x;
-    mouse.y = event.y;
-    
-    clearTimeout(restartTimer);
-    restartTimer = setTimeout(Restart, 60000);
-    
-});
 
 function drawParticle() {
     let heartWidth = png.width * 1.2;

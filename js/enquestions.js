@@ -64,6 +64,38 @@ let questions = [
     }
 ];
 
+//Glider 설정
+let answer1 = document.querySelectorAll("#answer1")
+let answer2 = document.querySelectorAll("#answer2")
+let answer3 = document.querySelectorAll("#answer3")
+let answer4 = document.querySelectorAll("#answer4")
+let answer5 = document.querySelectorAll("#answer5")
+let answer6 = document.querySelectorAll("#answer6")
+let answer7 = document.querySelectorAll("#answer7")
+
+const config = {
+    type: 'carousel',
+    animationDuration: 1000,
+    autoplay: 3000,
+    focusAt: '1',
+    startAt: 1,
+    perView: 3.5,
+    gap: 40
+}
+
+function gliderAnswer() {
+    answer1.innerHTML = answerResult[0].answer;
+    answer2.innerHTML = answerResult[1].answer;
+    answer3.innerHTML = answerResult[2].answer;
+    answer4.innerHTML = answerResult[3].answer;
+    answer5.innerHTML = answerResult[4].answer;
+    answer6.innerHTML = answerResult[5].answer;
+    answer7.innerHTML = answerResult[6].answer;
+    console.log("gliderdone");
+}
+
+var glide = new Glide('.glide', config)
+
 const MAX_QUESTIONS = 7;
 function finalReveal() {
 
@@ -75,8 +107,8 @@ function finalReveal() {
                 progress.classList.add('displayNone');
                 finalBt.classList.remove('displayNone');
                 document.querySelector(".glide-container").classList.remove("hideVis");
-            }, 600); 
-        }, 2000); 
+            }, 300); 
+        }, 1000); 
     }, 3000);
 }
 
@@ -93,23 +125,17 @@ getNewQuestion = () => {
         console.log("questionNumber> MAX_QUESTIONS");
         clickHide();
         mainQ.innerHTML = "This is What You Call Love";
-        // progressballs.classList.add('hidden');
-        // projectName.classList.add('hidden');
+        //glider 준비
+        var glide = new Glide('.glide', config)
+        glide.on('mount.before', gliderAnswer)
+        glide.mount()
+
         finalReveal();
-        
-        // setTimeout(() => {
-        //     window.location.href='/endpage.html';
-        // },5000);
-        // return window.location.assign('/endpage.html');
+
     } else {
         //hidden 요소 다시 불러오기
         clickShow();
         //진행정도표시
-        // progressballs.innerText = Math.floor(questionCounter/ (MAX_QUESTIONS-1) * 100) + "%";
-        // progressballs.innerText = (questionCounter+1)+" / "+MAX_QUESTIONS+" beat";
-        // let ballsize = progressballs.getBoundingClientRect().width;
-        // progressballs.style.left = ((questionCounter/ (MAX_QUESTIONS-1)) * 180 + ballsize/2) + "px";
-
         progressballs[questionCounter].style.backgroundColor = "white";
         //다음 질문 불러오기
         currentQuestion = availableQuestions[questionCounter];
@@ -122,10 +148,7 @@ getNewQuestion = () => {
         //횟수 더하기
         questionCounter++;
     }
-
-
-    // availableQuestions.splice(questionCounter, 1);
-    console.log("questionCounter", questionCounter);
+   console.log("questionCounter", questionCounter);
 };
 
 

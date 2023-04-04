@@ -72,13 +72,12 @@ let answer7 = document.querySelectorAll("#answer7")
 
 const config = {
     type: 'carousel',
-    startAt: 0,
-    perView: 4,
-    gap: 120,
-    peek: { before: 64, after: 100 },
-    // bound: true,
+    animationDuration: 1000,
     autoplay: 3000,
-    animationDuration: 1000
+    focusAt: '1',
+    startAt: 1,
+    perView: 3.5,
+    gap: 40
 }
 
 function gliderAnswer() {
@@ -124,25 +123,17 @@ getNewQuestion = () => {
         console.log("questionNumber> MAX_QUESTIONS");
         clickHide();
         mainQ.innerHTML = "이것이 당신의 소란한 사랑입니다";
-        // progressballs.classList.add('hidden');
-        // projectName.classList.add('hidden');
+        //glider 준비
+        var glide = new Glide('.glide', config)
         glide.on('mount.before', gliderAnswer)
-        glide.mount()       
+        glide.mount()
+
         finalReveal();
-        
-        // setTimeout(() => {
-        //     window.location.href='/endpage.html';
-        // },5000);
-        // return window.location.assign('/endpage.html');
+
     } else {
         //hidden 요소 다시 불러오기
         clickShow();
         //진행정도표시
-        // progressballs.innerText = Math.floor(questionCounter/ (MAX_QUESTIONS-1) * 100) + "%";
-        // progressballs.innerText = (questionCounter+1)+" / "+MAX_QUESTIONS+" beat";
-        // let ballsize = progressballs.getBoundingClientRect().width;
-        // progressballs.style.left = ((questionCounter/ (MAX_QUESTIONS-1)) * 180 + ballsize/2) + "px";
-
         progressballs[questionCounter].style.backgroundColor = "white";
         //다음 질문 불러오기
         currentQuestion = availableQuestions[questionCounter];
@@ -155,9 +146,6 @@ getNewQuestion = () => {
         //횟수 더하기
         questionCounter++;
     }
-
-
-    // availableQuestions.splice(questionCounter, 1);
     console.log("questionCounter", questionCounter);
 };
 

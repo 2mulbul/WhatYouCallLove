@@ -7,16 +7,20 @@ allRound.addEventListener("mouseup", () => {
     allRound.classList.remove('allRound-mousedown');
 });
 
-//progress.addEventListener("mouseenter", () => {
-//    progress.classList.add('displayNone');
-//    setTimeout(function () {
-//        finalBt.classList.remove('displayNone'); 
-//    },1500)
-//})
+progress.addEventListener("mouseenter", () => {
+    hide(progress);
+    show(finalBt);
+    finalBt.classList.remove('displayNone');
 
-//progress.addEventListener("mouseleave", () => {
-//    finalBt.classList.add('displayNone');
-//    setTimeout(function () {
-//        progress.classList.remove('displayNone'); 
-//    },1500)
-//})
+    setTimeout(() => {
+        progress.classList.add('displayNone');
+    }, 600); 
+})
+
+finalBt.addEventListener("mouseleave", () => {
+    progress.classList.remove('displayNone');
+    show(progress);
+    hide(finalBt);
+    
+    finalBt.classList.add('displayNone');
+})

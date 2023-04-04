@@ -7,15 +7,7 @@ let arrowinfoKey = document.querySelector("#arrowinfoKey");
 let progress = document.querySelector("#progress");
 
 linkText.addEventListener("click", clickFunction);
-// linkText.addEventListener("mouseover", () => {
-//     arrowinfoKey.style.backgroundColor  = "rgba(255,255,255,1)";
-// });
-// linkText.addEventListener("mouseleave", () => {
-//     arrowinfoKey.style.backgroundColor  = "rgba(255,255,255,0)";
-// });
-// window.onload = function() {
-//     mainAudio();
-// }
+
 
 function clickFunction() {
     linkText.classList.remove('slowAppear');
@@ -27,7 +19,11 @@ function clickFunction() {
     mainAudio();
     setTimeout(() => {
         // heart.classList.add('hidden');
-        linkText.innerHTML = "Choose the Phrase You Prefer";
+        if (document.title == "당신의 소란한") {
+            linkText.innerHTML = "당신의 사랑과 닮은 구절을 고르세요";
+        } else {
+            linkText.innerHTML = "Choose the Phrase You Prefer";
+        }
         linkText.classList.remove('hurryDisappear');
         linkText.classList.add('slowAppear');
             setTimeout(() => {

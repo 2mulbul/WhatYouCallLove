@@ -38,9 +38,9 @@ function transition() {
 }
 function pageHref(t) {
   if (t == engText_L) {
-    location.href = "https://mulbul2.cafe24.com/WhatYouCallLove/enmain.html";
+    location.href = "https://2mulbul.github.io/WhatYouCallLove/enmain.html";
   } else if (t == krText_L) {
-    location.href = "https://mulbul2.cafe24.com/WhatYouCallLove/krmain.html";
+    location.href = "https://2mulbul.github.io/WhatYouCallLove/krmain.html";
   }
 }
 
